@@ -41,11 +41,20 @@ public:
   }
 };
 
-class Child : Parent
+class Parent2
+{
+public:
+  Parent2() 
+  {
+    cout << "Construct Parent2" << endl;
+  }
+};
+
+class Child : Parent2, Parent
 {
 public:
   void fn(int a) {}
-  Child(A& _a, B& _b): a(_a), b(_b) 
+  Child(A& _a, B& _b): b(_b), a(_a) 
   {
     cout << "Construct Child" << endl;
   }
